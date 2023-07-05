@@ -1,6 +1,9 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id "com.vanniktech.maven.publish" version "0.25.3"
 }
 
 android {
@@ -27,6 +30,37 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.S01, true)
+    signAllPublications()
+
+    coordinates("io.github.albanybuipe96", "counter", findProperty("versionName") ? findProperty("versionName") : "1.0.0-SNAPSHOT")
+
+    pom {
+        name = "CodeWithEyram"
+        description = "Lib to Test Maven Publishing with Eyram"
+        url = "https://github.com/albanybuipe96/CodeWithEyram"
+        licenses {
+            license {
+                name = "MIT License"
+                url = "http://www.opensource.org/licenses/mit-license.php"
+            }
+        }
+        developers {
+            developer {
+                id = "albanybuipe96"
+                name = "Albany Buipe"
+                email = "mohammedarahman96@gmail.com"
+            }
+        }
+        scm {
+            connection = "scm:git:git:github.com/albanybuipe96/CodeWithEyram.git"
+            developerConnection = "git@github.com:albanybuipe96/CodeWithEyram.git"
+            url = "https://github.com/albanybuipe96/CodeWithEyram.git"
+        }
     }
 }
 
