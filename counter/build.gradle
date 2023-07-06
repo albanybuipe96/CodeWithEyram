@@ -37,7 +37,7 @@ mavenPublishing {
     publishToMavenCentral(SonatypeHost.S01, true)
     signAllPublications()
 
-    coordinates("io.github.albanybuipe96", "counter", findProperty("versionName") ? findProperty("versionName") : "1.0.0-SNAPSHOT")
+    coordinates("io.github.albanybuipe96", "counter", findProperty("versionName") ? findProperty("versionName") : "1.0.0")
 
     pom {
         name = "CodeWithEyram"
