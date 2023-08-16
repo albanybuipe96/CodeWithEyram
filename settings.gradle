@@ -10,6 +10,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            name = "hubtel.mobile"
+            url 'https://pkgs.dev.azure.com/hubtel/Mobile-Apps/_packaging/hubtel.mobile/maven/v1'
+            credentials {
+                username "hubtel.mobile"
+                password "uynarllkewytbvxnwbmpugydftkwv2k66c5b2o3gy3lvrlt3l5vq"
+            }
+        }
     }
 }
 rootProject.name = "CodeWithEyram"

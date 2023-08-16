@@ -37,10 +37,10 @@ mavenPublishing {
     publishToMavenCentral(SonatypeHost.S01, true)
     signAllPublications()
 
-    coordinates("io.github.albanybuipe96", "$sdk_name", findProperty("versionName") ? findProperty("versionName") : "1.0.3-SNAPSHOT")
+    coordinates("io.github.albanybuipe96", "$sdk_name", findProperty("versionName") ? findProperty("versionName") : "1.0.4-SNAPSHOT")
 
     pom {
-        name = "Count-Lib"
+        name = "Nexus-Counter-Library"
         description = "Lib to Test Maven Publishing with Eyram"
         url = "https://github.com/albanybuipe96/CodeWithEyram"
         licenses {
