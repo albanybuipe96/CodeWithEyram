@@ -37,7 +37,7 @@ mavenPublishing {
     publishToMavenCentral(SonatypeHost.S01, true)
     signAllPublications()
 
-    coordinates("io.github.albanybuipe96", "$sdk_name", findProperty("versionName") ? findProperty("versionName") : "1.0.5-SNAPSHOT")
+    coordinates("io.github.albanybuipe96", "$sdk_name", findProperty("versionName") ? findProperty("versionName") : "1.0.5")
 
     pom {
         name = "Nexus-Counter-Library"
@@ -67,7 +67,9 @@ mavenPublishing {
 dependencies {
 
     def hubtel_version = "1.0.7"
-    implementation "com.hubtel:core-ui:$hubtel_version"
+    api ("com.hubtel:core-ui:$hubtel_version") {
+        transitive = true
+    }
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
